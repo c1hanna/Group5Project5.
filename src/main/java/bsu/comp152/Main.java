@@ -52,7 +52,23 @@ public class Main extends Application {
         phoneWindow.setTitle("Phone Code");
         phoneWindow.show();
     }
+    @FXML
+    public void openJobsAPI(ActionEvent event) {
+        Parent jobsAPIRoot = null;
+        var loc = getClass().getResource("jobsAPI.fxml");
+        try {
+            jobsAPIRoot = FXMLLoader.load(loc);
+        } catch (IOException e) {
+            System.out.println("Either couldn't find FXML or there was an exception in the init function");
+        }
+        Scene windowContents = new Scene(jobsAPIRoot, 900, 400);
+        Stage jobsAPI = new Stage();
+        jobsAPI.setScene(windowContents);
+        jobsAPI.setTitle("Job Search");
+        jobsAPI.show();
     }
+}
+
 
 
 
